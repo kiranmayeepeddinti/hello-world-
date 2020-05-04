@@ -1,0 +1,67 @@
+</ol>
+<h3 id="technical-requirements">Technical Requirements</h3>
+<ol style="list-style-type: decimal">
+<li><p>Implement all parts of this assignment within the module2_assignment.rb file in the root directory of your solution. The grader will load this specific file from this location.</p></li>
+<li><p>Implement a class called LineAnalyzer. The grader will look for a class with this exact name.</p></li>
+<li>Implement the following read-only attributes in the LineAnalyzer class. The grader will look for accessor methods with these exact names.
+<ul>
+<li>highest_wf_count - a number with maximum number of occurrences for a single word (calculated)</li>
+<li>highest_wf_words - an array of words with the maximum number of occurrences (calculated)</li>
+<li>content - the string analyzed (provided)</li>
+<li>line_number - the line number analyzed (provided)</li>
+</ul></li>
+<li>Add the following methods in the LineAnalyzer class. The grader will look for methods with these exact names.
+<ul>
+<li>initialize() - taking a line of text (content) and a line number</li>
+<li>calculate_word_frequency() - calculates result and stores in attributes</li>
+</ul></li>
+<li>Implement the initialize() method to:
+<ul>
+<li>take in a line of text and line number</li>
+<li>initialize the content and line_number attributes</li>
+<li>call the calculate_word_frequency() method.</li>
+</ul></li>
+<li>Implement the calculate_word_frequency() method to:
+<ul>
+<li>calculate the maximum number of times a single word appears within provided content and store that in the highest_wf_count attribute.</li>
+<li>identify the words that were used the maximum number of times and store that in the highest_wf_words attribute.</li>
+</ul></li>
+<li><p>Implement a class called Solution. The grader will look for a class with this exact name.</p></li>
+<li>Implement the following read-only attributes in the Solution class. The grader will look for accessor methods with these exact names.
+<ul>
+<li>analyzers - an array that will hold a LineAnalyzer for each line of the input text file</li>
+<li>highest_count_across_lines - a number with the value of the highest frequency of a word</li>
+<li>highest_count_words_across_lines - an array of LineAnalyzers with the words with the highest frequency</li>
+</ul></li>
+<li>Implement the following methods in the Solution class. The grader will look for methods with these exact names.
+<ul>
+<li>initialize() - initialize the array that will have analyzers for each line of the file</li>
+<li>analyze_file() - processes 'test.txt' into an array of LineAnalyzers</li>
+<li>calculate_line_with_highest_frequency() - determines which line(s) of text has the highest number of occurrence of a single word</li>
+<li>print_highest_word_frequency_across_lines() - prints the word(s) with the highest number of occurrences and its corresponding line number</li>
+</ul></li>
+<li>Implement the initialize() method to:
+<ul>
+<li>initialize analyzers as an empty array</li>
+</ul></li>
+<li>Implement the analyze_file() method to:
+<ul>
+<li>Read the 'test.txt' file in lines</li>
+<li>Create an array of LineAnalyzers for each line in the file</li>
+</ul></li>
+<li>Implement the calculate_line_with_highest_frequency() method to:
+<ul>
+<li>calculate the maximum value for highest_wf_count contained by the LineAnalyzer objects in the analyzers array and store this result in the highest_count_across_lines attribute.</li>
+<li>identify the LineAnalyzer object(s) in the analyzers array that have the highest_wf_count equal to the highest_count_across_lines attribute value found in the previous step and store them in highest_count_words_across_lines attribute.</li>
+</ul></li>
+<li>Implement the print_highest_word_frequency_across_lines() method to
+<ul>
+<li>print the result in the following format</li>
+</ul>
+<pre class="text"><code>The following words have the highest word frequency per line: 
+[&quot;word1&quot;] (appears in line #)
+[&quot;word2&quot;, &quot;word3&quot;] (appears in line #)</code></pre></li>
+</ol>
+<h3 id="self-gradingfeedback">Self Grading/Feedback</h3>
+<p>You can self-grade yourself by calculating the result from the simple text file provided and by using the rspec unit tests also provided. When the solution has been completed successfully, the rspec test result should look ast follows.</p>
+<pre class="shell"><code>$ rspec
